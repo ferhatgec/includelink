@@ -16,5 +16,5 @@ std::string ftime(__TIME__); // Convert
 
 std::string
 VersionGen::VersionGenerator() {
-  return includeLink_Version + hyphen + includeLink_State + stringtools::EraseAllSubString(ftime, ":");
+  return includeLink_Version + hyphen + includeLink_State + hyphen + stringtools::EraseAllSubString(ftime, ":");
 }

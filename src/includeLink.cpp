@@ -76,6 +76,14 @@ includeLink::CreateLink(std::string args, std::string version) {
 	std::cout << "Nice!";
 }
 
+void
+includeLink::HelpFunction() {
+	std::cout << "includeLink <args>\n--g : Generates includeLink file.\n" <<
+	"--r : Reads and generates file from includeLink\n" <<
+	"--v : Shows includeLink's version and build number\n" <<
+	"--h : Shows here.\n";
+}
+
 int main(int argc, char** argv) {
 	includeLink link;
 	 if(argc > 1) {
@@ -93,8 +101,16 @@ int main(int argc, char** argv) {
 				} else if(arg == "--v") {
 					VersionGen version;
 					std::cout << version.VersionGenerator() << "\n";
+				} else if(arg == "--h") {
+					link.HelpFunction();
+				} else {
+					link.HelpFunction();
 				}
+			} else {
+				link.HelpFunction();
 			}
 		}
-    }
+	} else {
+		link.HelpFunction();
+	}
 }

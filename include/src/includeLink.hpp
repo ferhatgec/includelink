@@ -23,6 +23,9 @@ public:
 	// args
 	std::string Path(std::string);
 	void CreateLink(std::string, std::string);
+
+	// Help
+	void HelpFunction();
 };
 
 #endif // INCLUDE_LINK_HPP
