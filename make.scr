@@ -1,0 +1,3 @@
+system("g++ includeLink.cpp -o inclink");
+system("./inclink");
+return
