@@ -1,3 +1,2 @@
-system("g++ includeLink.cpp -o inclink");
-system("./inclink");
+system("make runall");
 return
