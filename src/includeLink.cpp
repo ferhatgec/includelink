@@ -11,6 +11,7 @@
 #include <iostream>
 #include <includeLink.hpp>
 #include <Parser/VersionGen.hpp>
+#include <Parser/Core.hpp>
 
 // Libraries
 #include "../Library/FileSystemPlusPlus.h"
@@ -81,6 +82,7 @@ includeLink::HelpFunction() {
 	std::cout << "includeLink <args>\n--g : Generates includeLink file.\n" <<
 	"--r : Reads and generates file from includeLink\n" <<
 	"--v : Shows includeLink's version and build number\n" <<
+  "--l : Links file from file\n" <<
 	"--h : Shows here.\n";
 }
 
@@ -103,6 +105,14 @@ int main(int argc, char** argv) {
 					std::cout << version.VersionGenerator() << "\n";
 				} else if(arg == "--h") {
 					link.HelpFunction();
+				} else if(arg == "--l") {
+					std::cout << "First: ";
+					std::string first, second;
+					std::getline(std::cin, first);
+					std::cout << "Second: ";
+					std::getline(std::cin, second);
+					CoreInit core;
+					core.CoreLink(first, second);
 				} else {
 					link.HelpFunction();
 				}

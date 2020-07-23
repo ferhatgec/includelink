@@ -21,7 +21,7 @@ HECOMP = g++ -c -Wall $< -std=gnu++17 -o
 # CLEAN
 CLEANALL = inclink
 CLEAN = *.o
-HEADERFILE = VersionGen.o
+HEADERFILE = VersionGen.o Core.o
 
 ifeq ($(OS),Windows_NT)
 	echo Windows_NT is not supported!
